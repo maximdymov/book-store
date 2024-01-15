@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Store.Memory;
+
 namespace Store.Web
 {
     public class Program
@@ -8,6 +11,7 @@ namespace Store.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSingleton<IBookRepository, BookRepository>();
 
             var app = builder.Build();
 
